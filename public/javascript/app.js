@@ -78,7 +78,7 @@ const getData = async () => {
   try {
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    const response = await fetch("/public/data.json");
+    const response = await fetch("public/data.json");
     if (!response.ok) {
       throw new Error("url fetch yang dituju tidak ditemukan");
     }
