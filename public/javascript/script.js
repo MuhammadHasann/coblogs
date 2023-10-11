@@ -32,13 +32,14 @@ const lightModeComp = () => {
   checkboxDarkMode.checked = false;
   root.style.setProperty("--primary-color", "#06b6d4");
   root.style.setProperty("--button", "#0f172a");
-  root.style.setProperty("--text-button", "#ffffff");
-  root.style.setProperty("--mode", "#ffffff");
-  root.style.setProperty("--mode-transparent", "rgba(255, 255, 255, 0.7)");
+  root.style.setProperty("--text-button", "#f1f5f9");
+  root.style.setProperty("--mode", "#f1f5f9");
+  root.style.setProperty("--mode-transparent", "rgba(241, 245, 249, 0.7)");
   root.style.setProperty("--text-mode", "#181818");
-  root.style.setProperty("--bg-other", "#ffffff");
+  root.style.setProperty("--bg-other", "#f1f5f9");
   root.style.setProperty("--text-aside", "#181818");
   root.style.setProperty("--bg-copyright", "#0C4A6E");
+  root.style.setProperty("--bg-notification", "#f1f5f9");
 };
 
 const darkModeComp = () => {
@@ -50,13 +51,14 @@ const darkModeComp = () => {
   checkboxDarkMode.checked = true;
   root.style.setProperty("--primary-color", "#06b6d4");
   root.style.setProperty("--button", "#334155");
-  root.style.setProperty("--text-button", "#ffffff");
+  root.style.setProperty("--text-button", "#f1f5f9");
   root.style.setProperty("--mode", "#0f172a");
   root.style.setProperty("--mode-transparent", "rgba(15, 23, 42, 0.7)");
-  root.style.setProperty("--text-mode", "#ffffff");
+  root.style.setProperty("--text-mode", "#f1f5f9");
   root.style.setProperty("--bg-other", "#1E293B");
   root.style.setProperty("--text-aside", "#64748b");
   root.style.setProperty("--bg-copyright", "#082F49");
+  root.style.setProperty("--bg-notification", "#020617");
 };
 
 const lightToggle = document.getElementById("light-toggle");
@@ -113,4 +115,22 @@ listMenu.forEach((menu) => {
     });
     menu.classList.add("active");
   });
+});
+
+const joinNewsletter = document.querySelector(".join-newsletter");
+const notification = document.querySelector(".notification");
+const closeNotification = document.querySelector("#close-notification");
+
+joinNewsletter.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  notification.classList.add("active");
+
+  setTimeout(() => {
+    notification.classList.remove("active");
+  }, 3000);
+});
+
+closeNotification.addEventListener("click", () => {
+  notification.classList.remove("active");
 });

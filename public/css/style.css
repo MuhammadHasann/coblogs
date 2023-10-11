@@ -3,13 +3,14 @@
 :root {
   --primary-color: #06b6d4;
   --button: #0f172a;
-  --text-button: #ffffff;
-  --mode: #ffffff;
+  --text-button: #f1f5f9;
+  --mode: #f1f5f9;
   --mode-transparent: rgba(255, 255, 255, 0.7);
   --text-mode: #181818;
-  --bg-other: #ffffff;
+  --bg-other: #f1f5f9;
   --text-aside: #181818;
   --bg-copyright: #0c4a6e;
+  --bg-notification: #f1f5f9;
 }
 
 * {
@@ -364,7 +365,7 @@ aside li.active a {
   background: var(--primary-color);
   font-size: 14px;
   font-weight: 700;
-  color: #ffffff;
+  color: #f1f5f9;
   outline: none;
   border: 1px solid var(--primary-color);
   border-radius: 8px;
@@ -508,7 +509,7 @@ footer .copyright {
   background: var(--bg-copyright);
   font-size: 12px;
   font-weight: 500;
-  color: #ffffff;
+  color: #f1f5f9;
   text-align: center;
 }
 
@@ -551,6 +552,7 @@ footer .copyright {
   font-size: 20px;
   color: var(--text-mode);
   text-align: center;
+  border-radius: 9999px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -609,7 +611,7 @@ footer .copyright {
   background: var(--primary-color);
   font-size: 14px;
   font-weight: 700;
-  color: #ffffff;
+  color: #f1f5f9;
   outline: none;
   border: 1px solid var(--primary-color);
   border-radius: 8px;
@@ -618,6 +620,83 @@ footer .copyright {
 
 .modal-detail-blog article button:hover {
   filter: saturate(150%);
+}
+
+.notification {
+  top: 0%;
+  display: none;
+  opacity: 0;
+  transition: top 0.3s ease-in-out 0.1s;
+}
+
+.notification.active {
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  width: 360px;
+  background: var(--bg-notification);
+  backdrop-filter: blur(6px);
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px #1818187a;
+  opacity: 1;
+  overflow: hidden;
+  z-index: 9999;
+  transition: top 0.3s ease-in-out 0.1s;
+}
+
+.notification.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--primary-color);
+  /* width: 100%; */
+  height: 4px;
+  border-radius: 9999px;
+  animation: loading 3s linear forwards;
+}
+
+.notification .check {
+  color: #22c55e;
+}
+
+.notification p {
+  flex: 4;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-mode);
+}
+
+.notification .close {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  font-size: 14px;
+  color: var(--text-mode);
+  text-align: center;
+  line-height: 24px;
+  border-radius: 9999px;
+  transition: all 0.3s ease-in-out;
+}
+
+.notification .close:hover {
+  background: #4755697a;
+}
+
+@keyframes loading {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1279px) {
@@ -1236,5 +1315,22 @@ footer .copyright {
     margin: 8px 20px;
     font-size: 12px;
     border-radius: 4px;
+  }
+
+  .notification.active {
+    padding: 12px 16px;
+    width: 280px;
+  }
+
+  .notification .check {
+    font-size: 10px;
+  }
+
+  .notification p {
+    font-size: 10px;
+  }
+
+  .notification .close {
+    font-size: 10px;
   }
 }
