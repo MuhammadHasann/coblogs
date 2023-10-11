@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dicoding</title>
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <button class="hamburger-menu" id="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="#" class="logo">
+        <img src="/public/svg/logo.svg" alt="logo" />
+        <span>coblogs</span>
+      </a>
+      <div class="right-content">
+        <a href="#footer" class="newsletter">Join Newsletter</a>
+        <div class="line"></div>
+        <button class="dark-mode-button">
+          <input type="checkbox" class="checkboxDarkMode" id="checkboxDarkMode" hidden />
+          <i class="fa-regular fa-sun dark-mode" id="darkMode"></i>
+        </button>
+        <div class="container-dark-mode" id="modal-dark-mode">
+          <span id="light-toggle"><i class="fa-regular fa-sun"></i> Light</span>
+          <span id="dark-toggle"><i class="fa-regular fa-moon"></i> Dark</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <aside>
+        <section class="menu">
+          <h4>Kategori</h4>
+          <ul>
+            <li class="list-menu"><a href="#technology-section">Teknologi</a></li>
+            <li class="list-menu"><a href="#business-section">Bisnis</a></li>
+            <li class="list-menu"><a href="#economy-section">Ekonomi</a></li>
+            <li class="list-menu"><a href="#lyfe-section">Kehidupan</a></li>
+          </ul>
+        </section>
+      </aside>
+
+      <div class="container">
+        <section class="loading-article" id="loading-section"></section>
+        <section class="container-article" id="technology-section"></section>
+        <section class="container-article" id="business-section"></section>
+        <section class="container-article" id="economy-section"></section>
+        <section class="container-article" id="lyfe-section"></section>
+      </div>
+
+      <section class="modal-detail-blog" id="modal-detail-blog"></section>
+    </main>
+
+    <footer id="footer">
+      <section class="info">
+        <section class="profile">
+          <figure class="logo-footer">
+            <img src="/public/svg/logo.svg" alt="logo" />
+            <span>coblogs</span>
+          </figure>
+          <div class="media-social">
+            <i class="fa-brands fa-facebook icon-media-social"></i>
+            <i class="fa-brands fa-x-twitter icon-media-social"></i>
+            <i class="fa-brands fa-instagram icon-media-social"></i>
+            <i class="fa-brands fa-youtube icon-media-social"></i>
+          </div>
+        </section>
+        <form action="#" class="join-newsletter">
+          <label for="inputNewsletter">Newsletter</label>
+          <input type="email" name="inputNewsletter" id="inputNewsletter" placeholder="your email..." />
+          <button>Submit <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+      </section>
+      <section class="copyright">
+        <p>Belajar Dasar Pemrograman Web &copy; 2023, Muhammad Hasan</p>
+      </section>
+    </footer>
+
+    <script src="/public/javascript/script.js"></script>
+    <script src="/public/javascript/app.js"></script>
+  </body>
+</html>
