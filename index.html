@@ -17,17 +17,26 @@
   </head>
   <body>
     <header>
-      <button class="hamburger-menu" id="hamburger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
       <a href="#" class="logo">
         <img src="public/svg/logo.svg" alt="logo" />
         <span>coblogs</span>
       </a>
       <div class="right-content">
-        <a href="#footer" class="newsletter">Join Newsletter</a>
+        <button class="hamburger-menu" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav>
+          <i class="fa-solid fa-xmark icon-close-nav"></i>
+          <ul>
+            <li class="list-menu active"><a href="#technology-section">Teknologi</a></li>
+            <li class="list-menu"><a href="#business-section">Bisnis</a></li>
+            <li class="list-menu"><a href="#economy-section">Ekonomi</a></li>
+            <li class="list-menu"><a href="#lyfe-section">Kehidupan</a></li>
+            <li><a href="#footer" class="newsletter">Join Newsletter</a></li>
+          </ul>
+        </nav>
         <div class="line"></div>
         <button class="dark-mode-button">
           <input type="checkbox" class="checkboxDarkMode" id="checkboxDarkMode" hidden />
@@ -42,14 +51,22 @@
 
     <main>
       <aside>
-        <section class="menu">
-          <h4>Kategori</h4>
-          <ul>
-            <li class="list-menu"><a href="#technology-section">Teknologi</a></li>
-            <li class="list-menu"><a href="#business-section">Bisnis</a></li>
-            <li class="list-menu"><a href="#economy-section">Ekonomi</a></li>
-            <li class="list-menu"><a href="#lyfe-section">Kehidupan</a></li>
-          </ul>
+        <section class="aside-profile">
+          <figure>
+            <img src="public/image/profile.jpg" alt="profile" />
+          </figure>
+          <div class="detail-profile">
+            <h3>Muhammad Hasan</h3>
+            <p>Frontend Web Developer</p>
+            <div class="media-social-profile">
+              <i class="fa-brands fa-facebook icon-media-social"></i>
+              <i class="fa-brands fa-x-twitter icon-media-social"></i>
+              <i class="fa-brands fa-instagram icon-media-social"></i>
+              <i class="fa-brands fa-youtube icon-media-social"></i>
+            </div>
+            <p>789 Mengikuti</p>
+            <button>&#43; Follow</button>
+          </div>
         </section>
       </aside>
 

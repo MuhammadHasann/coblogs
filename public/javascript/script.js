@@ -1,15 +1,29 @@
 const root = document.documentElement;
 
-window.onscroll = function () {
-  const header = document.querySelector("header");
-  const fixedNav = header.offsetTop;
+const hamburgerMenu = document.getElementById("hamburger-menu");
+const nav = document.querySelector("nav");
+const navUl = document.querySelector("nav ul");
 
-  if (window.pageYOffset > fixedNav) {
-    header.classList.add("header-fixed");
-  } else {
-    header.classList.remove("header-fixed");
+hamburgerMenu.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target !== hamburgerMenu && event.target !== navUl) {
+    nav.classList.remove("active");
   }
-};
+});
+
+// window.onscroll = function () {
+//   const header = document.querySelector("header");
+//   const fixedNav = header.offsetTop;
+
+//   if (window.pageYOffset > fixedNav) {
+//     header.classList.add("header-fixed");
+//   } else {
+//     header.classList.remove("header-fixed");
+//   }
+// };
 
 const darkModeButton = document.getElementById("darkMode");
 const modalDarkMode = document.getElementById("modal-dark-mode");
@@ -18,8 +32,8 @@ darkModeButton.addEventListener("click", () => {
   modalDarkMode.classList.toggle("active");
 });
 
-document.addEventListener("click", (event) => {
-  if (event.target !== darkModeButton) modalDarkMode.classList.remove("active");
+document.addEventListener("click", (e) => {
+  if (e.target !== darkModeButton) modalDarkMode.classList.remove("active");
 });
 
 // Dark Mode
@@ -40,6 +54,7 @@ const lightModeComp = () => {
   root.style.setProperty("--text-aside", "#181818");
   root.style.setProperty("--bg-copyright", "#0C4A6E");
   root.style.setProperty("--bg-notification", "#f1f5f9");
+  root.style.setProperty("--bg-nav", "#f1f5f9");
 };
 
 const darkModeComp = () => {
@@ -56,9 +71,10 @@ const darkModeComp = () => {
   root.style.setProperty("--mode-transparent", "rgba(15, 23, 42, 0.7)");
   root.style.setProperty("--text-mode", "#f1f5f9");
   root.style.setProperty("--bg-other", "#1E293B");
-  root.style.setProperty("--text-aside", "#64748b");
+  root.style.setProperty("--text-aside", "#94a3b8");
   root.style.setProperty("--bg-copyright", "#082F49");
   root.style.setProperty("--bg-notification", "#020617");
+  root.style.setProperty("--bg-nav", "#1e293b");
 };
 
 const lightToggle = document.getElementById("light-toggle");
@@ -89,21 +105,6 @@ lightToggle.addEventListener("click", () => {
 
 darkToggle.addEventListener("click", () => {
   darkModeComp();
-});
-
-const hamburgerMenu = document.getElementById("hamburger-menu");
-const aside = document.querySelector("aside");
-
-hamburgerMenu.addEventListener("click", () => {
-  aside.classList.toggle("active");
-  hamburgerMenu.classList.toggle("active");
-});
-
-document.addEventListener("click", (event) => {
-  if (event.target !== hamburgerMenu) {
-    aside.classList.remove("active");
-    hamburgerMenu.classList.remove("active");
-  }
 });
 
 const listMenu = document.querySelectorAll(".list-menu");
