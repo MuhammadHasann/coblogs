@@ -135,3 +135,34 @@ joinNewsletter.addEventListener("submit", (e) => {
 closeNotification.addEventListener("click", () => {
   notification.classList.remove("active");
 });
+
+const followers = document.getElementById("followers");
+const btnFollow = document.getElementById("follow");
+
+const follow = () => {
+  localStorage.setItem("follow", "true");
+  followers.textContent = "1000 Mengikuti";
+  btnFollow.textContent = "Mengikuti";
+  btnFollow.classList.add("active");
+};
+
+const unfollow = () => {
+  localStorage.setItem("follow", "false");
+  followers.textContent = "999 Mengikuti";
+  btnFollow.textContent = "+ Ikuti";
+  btnFollow.classList.remove("active");
+};
+
+if (localStorage.getItem("follow") === "true") {
+  follow();
+} else {
+  unfollow();
+}
+
+btnFollow.addEventListener("click", () => {
+  if (localStorage.getItem("follow") === "true") {
+    unfollow();
+  } else {
+    follow();
+  }
+});

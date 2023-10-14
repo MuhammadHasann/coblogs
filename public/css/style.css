@@ -22,7 +22,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 20px;
+  scroll-padding-top: 100px;
 }
 
 body {
@@ -328,6 +328,11 @@ aside .detail-profile {
   border: 2px solid var(--button);
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
+}
+
+.detail-profile button.active {
+  background: transparent;
+  color: var(--text-mode);
 }
 
 .detail-profile button:hover {
